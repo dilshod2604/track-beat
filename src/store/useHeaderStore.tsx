@@ -5,7 +5,7 @@ interface IHeaderStore {
   login: () => void;
   logout: () => void;
 }
-export const useHeaderStore = create<IHeaderStore>((set) => ({
+export const useHeaderStore = create<IHeaderStore>((set, get) => ({
   isOpen: false,
   setIsOpen: (value) => set(() => ({ isOpen: value })),
   login: () => {

@@ -23,12 +23,6 @@ const ProfileButton = () => {
           />
         </button>
       </div>
-      <button
-        className="flex items-center justify-center px-4 py-2"
-        onClick={ logout}
-      >
-        Logout
-      </button>
     </div>
   );
 };

@@ -1,7 +1,9 @@
 "use client";
 import Button from "@/components/custom/Button";
+import Modal from "@/components/shared/Modal";
 import SearchTracks from "@/components/shared/SearchTracks";
 import ProfileButton from "@/components/ui/ProfileButton";
+import ProfileMenu from "@/components/ui/ProfileMenu";
 import { useGetMeQuery } from "@/redux/api/me";
 import { useHeaderStore } from "@/store/useHeaderStore";
 import React from "react";
@@ -45,6 +47,9 @@ const Header = () => {
             </div>
           )}
         </div>
+        <Modal open={isOpen} className="right-0 top-[100px]">
+          <ProfileMenu />
+        </Modal>
       </div>
     </header>
   );

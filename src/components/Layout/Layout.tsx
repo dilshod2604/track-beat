@@ -1,11 +1,14 @@
+"use client";
 import React, { ReactNode } from "react";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import Playlists from "../shared/Playlists";
+import { useHeaderStore } from "@/store/useHeaderStore";
 interface LayoutProps {
   children: ReactNode;
 }
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const { setIsOpen } = useHeaderStore();
   return (
     <div>
       <Header />

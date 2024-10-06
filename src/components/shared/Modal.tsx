@@ -7,13 +7,18 @@ interface ModalProps {
 }
 const Modal: React.FC<ModalProps> = ({ children, open, className }) => {
   return (
-    <div className="absolute">
+    <>
       {open && (
-        <div className={twMerge(`flex flex-col p-4 bg-neutral-800 rounded-md`)}>
+        <div
+          className={twMerge(
+            `flex flex-col p-4 bg-neutral-800 rounded-md absolute`,
+            className
+          )}
+        >
           {children}
         </div>
       )}
-    </div>
+    </>
   );
 };
 
