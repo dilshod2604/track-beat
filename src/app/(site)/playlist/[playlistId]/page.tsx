@@ -1,9 +1,12 @@
-import React from 'react'
+import PlaylistPage from "@/components/pages/PlaylistPage";
+import React from "react";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <div>
+      <PlaylistPage />
+    </div>
+  );
+};
 
-export default page
+export default page;
