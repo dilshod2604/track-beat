@@ -1,9 +1,12 @@
-import React from 'react'
+import SearchPage from "@/components/pages/SearchPage";
+import React from "react";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <div>
+      <SearchPage />
+    </div>
+  );
+};
 
-export default page
+export default page;
