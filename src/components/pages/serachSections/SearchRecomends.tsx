@@ -1,9 +1,12 @@
-import React from 'react'
+"use client";
+import React from "react";
 
 const SearchRecomends = () => {
   return (
-    <div>SearchRecomends</div>
-  )
-}
+    <section className="w-full h-full ">
+    
+    </section>
+  );
+};
 
-export default SearchRecomends
+export default SearchRecomends;
