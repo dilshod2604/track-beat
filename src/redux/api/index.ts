@@ -26,6 +26,6 @@ import {
     baseQuery: baseQueryExtends,
     refetchOnFocus: true,
     refetchOnReconnect: true,
-    tagTypes: ["me", "playlist","search","category"],
+    tagTypes: ["me", "playlist","search","category","player"],
     endpoints: () => ({}),
   });

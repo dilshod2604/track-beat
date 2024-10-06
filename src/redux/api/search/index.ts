@@ -1,4 +1,5 @@
 import { api as index } from "..";
+import { SEARCH } from "./type";
 
 const api = index.injectEndpoints({
   endpoints: (build) => ({

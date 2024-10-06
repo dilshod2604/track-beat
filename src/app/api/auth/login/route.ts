@@ -11,6 +11,11 @@ export const GET = async () => {
     "playlist-read-collaborative",
     "playlist-modify-private",
     "playlist-modify-public",
+    " user-read-playback-state",
+    "user-modify-playback-state",
+    "user-read-currently-playing",
+    "app-remote-control",
+    "streaming",
   ].join(" ");
 
   const clientId = process.env.SPOTIFY_CLIENT_ID;

@@ -1,4 +1,5 @@
 import { api as index } from "..";
+import { CATEGORIES } from "./types";
 const api = index.injectEndpoints({
   endpoints: (build) => ({
     getCategory: build.query<
