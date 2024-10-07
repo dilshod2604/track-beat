@@ -16,6 +16,7 @@ export const GET = async () => {
     "user-read-currently-playing",
     "app-remote-control",
     "streaming",
+    "ugc-image-upload",
   ].join(" ");
 
   const clientId = process.env.SPOTIFY_CLIENT_ID;

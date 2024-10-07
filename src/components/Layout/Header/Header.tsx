@@ -47,9 +47,6 @@ const Header = () => {
             </div>
           )}
         </div>
-        <Modal open={isOpen} className="right-0 top-[100px]">
-          <ProfileMenu />
-        </Modal>
       </div>
     </header>
   );
