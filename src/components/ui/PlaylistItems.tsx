@@ -1,16 +1,16 @@
 "use client";
 import { useGetUserPLaylistsQuery } from "@/redux/api/playlist";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import { FaPlay } from "react-icons/fa";
 const PlaylistItems = () => {
-  const { data: session } = useGetUserPLaylistsQuery();
+  const { data: playlists } = useGetUserPLaylistsQuery();
   const router = useRouter();
 
   return (
     <div className="flex flex-col gap-y-3 px-4  overflow-y-scroll ">
-      {session &&
-        session?.items.map((item) => (
+      {playlists &&
+        playlists?.items.map((item) => (
           <div
             key={item.id}
             className="flex items-center justify-between px-4 gap-x-3 py-2 hover:bg-neutral-700 rounded-md transition group cursor-pointer "

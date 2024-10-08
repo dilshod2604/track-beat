@@ -1,3 +1,4 @@
+import { ICreatePLaylist } from "./../../../types/schema.d";
 import { IPlaylist, IPlaylistById } from "@/types/schema";
 
 namespace PLAYLIST {
@@ -15,5 +16,12 @@ namespace PLAYLIST {
     playlist_id: string;
     name: string;
     description?: string;
+  };
+
+  type CreatePlaylistResponse = ICreatePlaylist;
+  type CreatePlaylistRequest = {
+    user_id: string;
+    name: string;
+    description: string;
   };
 }

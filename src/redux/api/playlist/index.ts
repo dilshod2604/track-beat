@@ -28,13 +28,7 @@ const api = index.injectEndpoints({
       PLAYLIST.addCustomCoverResponse,
       PLAYLIST.addCustomCoverRequest
     >({
-      query: ({
-        playlist_id,
-        image,
-      }: {
-        playlist_id: string;
-        image: string;
-      }) => ({
+      query: ({ playlist_id, image }) => ({
         url: `/playlists/${playlist_id}/images`,
         method: "PUT",
         body: image,
@@ -45,20 +39,26 @@ const api = index.injectEndpoints({
       PLAYLIST.ChnageDetailsResponse,
       PLAYLIST.ChnageDetailsRequest
     >({
-      query: ({
-        name,
-        description,
-        playlist_id,
-      }: {
-        name: string;
-        description?: string;
-        playlist_id: string;
-      }) => ({
+      query: ({ name, description, playlist_id }) => ({
         url: `/playlists/${playlist_id}`,
         method: "PUT",
         body: {
           name: name,
-          description: description,
+          description: description 
+        },
+      }),
+      invalidatesTags: ["playlist"],
+    }),
+    createPlaylist: build.mutation<
+      PLAYLIST.CreatePlaylistResponse,
+      PLAYLIST.CreatePlaylistRequest
+    >({
+      query: ({ user_id, name, description }) => ({
+        url: `users/${user_id}/playlists`,
+        method: "POST",
+        body: {
+          name,
+          description,
         },
       }),
       invalidatesTags: ["playlist"],
@@ -70,4 +70,5 @@ export const {
   useGetPlaylistByIdQuery,
   useAddCustomCoverMutation,
   useChangeDetailsMutation,
+  useCreatePlaylistMutation,
 } = api;

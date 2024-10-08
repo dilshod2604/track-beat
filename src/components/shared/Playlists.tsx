@@ -13,7 +13,7 @@ import CreatePlaylist from "../ui/CreatePlaylist";
 const Playlists = () => {
   const { isOpen, setIsOpen } = useCreatePlaylistStore();
   return (
-    <div className=" h-screen bg-neutral-900 rounded-xl flex flex-col  ">
+    <div className=" h-screen bg-neutral-900 rounded-xl flex flex-col relative  ">
       <div className="flex items-center justify-between px-4 py-4  ">
         <div
           className="flex items-center gap-x-4 hover:opacity-75
@@ -48,7 +48,7 @@ const Playlists = () => {
           <IoIosList size={20} className="text-wh ite" />
         </div>
       </div>
-      <Modal open={isOpen}>
+      <Modal open={isOpen} className="top-[50px] left-4 z-10 ">
         <CreatePlaylist />
       </Modal>
       <PlaylistItems />
