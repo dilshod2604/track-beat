@@ -48,7 +48,8 @@ const Playlists = () => {
           <IoIosList size={20} className="text-wh ite" />
         </div>
       </div>
-      <Modal open={isOpen} className="top-[50px] left-4 z-10 ">
+      <Modal open={isOpen} className="top-[50px] left-4 z-10">
+        
         <CreatePlaylist />
       </Modal>
       <PlaylistItems />

@@ -11,7 +11,7 @@ const Modal: React.FC<ModalProps> = ({ children, open, className }) => {
       {open && (
         <div
           className={twMerge(
-            `flex flex-col p-4 bg-neutral-800 rounded-md absolute`,
+            `flex flex-col p-4 bg-neutral-800 rounded-md absolute transition duration-300`,
             className
           )}
         >
