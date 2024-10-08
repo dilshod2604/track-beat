@@ -1,28 +1,34 @@
 import { usePlayerstore } from "@/store/usePlayerStaore";
+import { IPlaylistById } from "@/types/schema";
 import React from "react";
+
 interface PlaylistIdItemsProps {
   data: IPlaylistById | undefined;
 }
+
 const PlaylistIdItems: React.FC<PlaylistIdItemsProps> = (props) => {
+  const { data } = props; 
   const { setTrackIndex, setTrackUris, activeTrackUri, setActiveTrackUri } =
     usePlayerstore();
 
   const playMusic = (index: number, uri: string) => {
-    const filterTrackUris = data?.tracks.items.map((item) => item.track.uri);
-    setTrackUris(filterTrackUris!);
-    setTrackIndex(index);
-    setActiveTrackUri(uri); 
+    if (data) {
+      const filterTrackUris = data?.tracks.items.map((item) => item.track.uri);
+      setTrackUris(filterTrackUris!);
+      setTrackIndex(index);
+      setActiveTrackUri(uri);
+    }
   };
 
-  const { data } = props;
   const style = (uri: string) => {
     return activeTrackUri === uri
       ? `text-[#22c55e] font-semibold hover:underline hover:decoration-white cursor-pointer `
       : `text-white font-semibold hover:underline hover:decoration-white cursor-pointer`;
   };
+
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col p-4     ">
+      <div className="flex flex-col p-4">
         {data?.tracks.items.map((item, index) => (
           <div
             key={index}
@@ -32,11 +38,17 @@ const PlaylistIdItems: React.FC<PlaylistIdItemsProps> = (props) => {
             <div className="flex items-center gap-x-3">
               <div>{index + 1}</div>
               <div className="w-[50px] h-[50px] flex items-center justify-center overflow-hidden rounded-md">
-                <img
-                  src={item.track.album.images[0].url}
-                  alt="image"
-                  className="w-full h-full"
-                />  
+                {item.track.album.images.length > 0 ? (
+                  <img
+                    src={item.track.album.images[0].url}  
+                    alt="image"
+                    className="w-full h-full"
+                  />
+                ) : (
+                  <div className="bg-gray-500 w-full h-full flex items-center justify-center text-white">
+                    No Image
+                  </div>
+                )}
               </div>
               <div>
                 <p className={style(item.track.uri)}>{item.track.name}</p>
@@ -59,17 +71,3 @@ const PlaylistIdItems: React.FC<PlaylistIdItemsProps> = (props) => {
 };
 
 export default PlaylistIdItems;
-
-
-
-//  const handlePlayerStateChange = (state: any) => {
-//    if (state) {
-//      setOnPlay(state.isPlaying);
-//      if (state.track && trackUris) {
-//        const currentTrackIndex = trackUris.indexOf(state.track.uri);
-//        if (currentTrackIndex !== -1) {
-//          setActiveTrackIndex(currentTrackIndex);
-//        }
-//      }
-//    }
-//  };

@@ -12,7 +12,11 @@ const PlaylistIdHeader: React.FC<PlaylistIdHeaderProps> = (props) => {
   return (
     <div className="flex items-center w-full justify-start gap-x-5 mt-5">
       <div className="relative flex group items-center justify-center w-[150px] h-[150px] overflow-hidden rounded-md">
-        <img src={data?.images[0].url} alt="image" className="w-full h-full" />
+        <img
+          src={data?.images ? data.images[0].url : ""}
+          alt="image"
+          className="w-full h-full"
+        />
         <button
           className="absolute flex flex-col items-center justify-center w-full h-full opacity-0 group-hover:opacity-100 group-hover:bg-neutral-950/75 transition focus:outline-none"
           onClick={() => setIsOpen(true)}

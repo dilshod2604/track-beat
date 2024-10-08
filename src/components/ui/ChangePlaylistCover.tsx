@@ -63,12 +63,16 @@ const ChangePlaylistCover: React.FC<ChangePlaylistCoverProps> = ({ data }) => {
     <div className="flex flex-col pb-5">
       <div className="flex items-center justify-between py-5 mb-5">
         <h1 className="text-white font-bold text-xl ">Изменение сведений</h1>
-        <MdOutlineClose size={25} className="text-white hover:opacity-75" />
+        <MdOutlineClose
+          size={25}
+          className="text-white hover:opacity-75"
+          onClick={() => setIsOpen(false)}
+        />
       </div>
       <div className="flex gap-x-4 items-center justify-between">
         <div className="relative flex group items-center justify-center w-[150px] h-[150px] overflow-hidden rounded-md">
           <img
-            src={image ? image : data?.images[0].url}
+            src={image ? image : data?.images ? data.images[0].url : ""}
             alt="image"
             className="w-full h-full"
           />

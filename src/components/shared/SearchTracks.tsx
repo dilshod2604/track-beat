@@ -3,7 +3,6 @@ import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { DebounceInput } from "react-debounce-input";
 import { IoIosSearch } from "react-icons/io";
-
 const SearchTracks = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [hasFocus, setHasFocus] = useState(false);

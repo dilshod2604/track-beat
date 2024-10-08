@@ -1,4 +1,5 @@
 import { Device } from "@/types/schema";
+import { AnyARecord } from "dns";
 
 namespace PLAYER {
   type GetPlayBackStateResponse = any;
