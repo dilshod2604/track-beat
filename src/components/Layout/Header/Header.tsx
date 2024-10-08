@@ -3,9 +3,9 @@ import Button from "@/components/custom/Button";
 import Modal from "@/components/shared/Modal";
 import SearchTracks from "@/components/shared/SearchTracks";
 import ProfileButton from "@/components/ui/ProfileButton";
-import ProfileMenu from "@/components/ui/ProfileMenu";
 import { useGetMeQuery } from "@/redux/api/me";
 import { useHeaderStore } from "@/store/useHeaderStore";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { FaSpotify } from "react-icons/fa";
 import { GoHomeFill } from "react-icons/go";
@@ -13,12 +13,17 @@ import { GoHomeFill } from "react-icons/go";
 const Header = () => {
   const { data: session } = useGetMeQuery();
   const { isOpen, logout, login, setIsOpen } = useHeaderStore();
+  const router = useRouter();
   return (
     <header className="w-full flex items-center fixed bg-black top-0">
       <div className="container">
         <div className="flex items-center justify-between py-3 w-full ">
           <div className="flex items-center justify-start px-5 py-3  w-full">
-            <FaSpotify size={40} className="text-white" />
+            <FaSpotify
+              size={40}
+              className="text-white"
+              onClick={() => router.push("/")}
+            />
           </div>
           <div className="flex items-center gap-x-3 w-full  ">
             <div
