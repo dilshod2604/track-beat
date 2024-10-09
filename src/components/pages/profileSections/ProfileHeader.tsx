@@ -10,7 +10,7 @@ const ProfileHeader = () => {
   return (
     <section className="pt-[100px] bg-gradient-to-b from-teal-300">
       <div className="container">
-        <div className="flex gap-x-5 items-center">
+        <div className="flex gap-x-5 items-center max-lg:flex-col max-lg:justify-center ">
           <div className="relative flex group items-center justify-center w-[250px] h-[250px] overflow-hidden rounded-full">
             <img
               src={me?.images ? me.images[1].url : ""}
@@ -23,9 +23,9 @@ const ProfileHeader = () => {
             </button>
           </div>
 
-          <div className="flex flex-col gap-x-5">
+          <div className="flex flex-col gap-x-5  max-md:items-center">
             <p className="text-white text-sm font-bold">Профиле</p>
-            <h1 className="text-white font-black md:text-4xl lg:text-5xl ">
+            <h1 className="text-white font-black text-5xl">
               {me?.display_name}
             </h1>
             <p className="text-white font-sm  font-bold">

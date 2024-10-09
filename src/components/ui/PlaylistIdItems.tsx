@@ -7,7 +7,7 @@ interface PlaylistIdItemsProps {
 }
 
 const PlaylistIdItems: React.FC<PlaylistIdItemsProps> = (props) => {
-  const { data } = props; 
+  const { data } = props;
   const { setTrackIndex, setTrackUris, activeTrackUri, setActiveTrackUri } =
     usePlayerstore();
 
@@ -40,7 +40,7 @@ const PlaylistIdItems: React.FC<PlaylistIdItemsProps> = (props) => {
               <div className="w-[50px] h-[50px] flex items-center justify-center overflow-hidden rounded-md">
                 {item.track.album.images.length > 0 ? (
                   <img
-                    src={item.track.album.images[0].url}  
+                    src={item.track.album.images[0].url}
                     alt="image"
                     className="w-full h-full"
                   />
@@ -57,7 +57,7 @@ const PlaylistIdItems: React.FC<PlaylistIdItemsProps> = (props) => {
                 </p>
               </div>
             </div>
-            <div className="flex items-start ">
+            <div className="flex items-start  max-lg:hidden">
               <p className="text-neutral-300 font-semibold hover:underline hover:decoration-white hover:text-white cursor-pointer">
                 {item.track.name}
               </p>

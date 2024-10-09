@@ -26,7 +26,10 @@ const PlaylistItems = () => {
             key={item.id}
             className="flex items-center justify-between px-4 gap-x-3 py-2 hover:bg-neutral-700 rounded-md transition group cursor-pointer relative"
           >
-            <div className=" w-[50px] h-[50px] overflow-hidden rounded-md  relative flex items-center justify-center">
+            <div
+              className=" w-[50px] h-[50px] overflow-hidden rounded-md  relative flex items-center justify-center"
+              onClick={() => router.push(`/playlist/${item.id}`)}
+            >
               <img
                 src={item.images ? item.images[0].url : ""}
                 alt={item.name}
@@ -39,7 +42,7 @@ const PlaylistItems = () => {
                 <FaPlay className="text-white" />
               </button>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col max-md:hidden">
               <p
                 className="text-white font-semibold cursor-pointer hover:underline "
                 onClick={() => router.push(`/playlist/${item.id}`)}
@@ -51,7 +54,7 @@ const PlaylistItems = () => {
               </p>
             </div>
             <BsThreeDotsVertical
-              className="text-neutral-300 absolute right-0 top-2"
+              className="text-neutral-300 absolute right-0 top-2 max-md:hidden "
               onClick={() => handleOpenMenu(item.id)}
             />
             {playlistId === item.id && (

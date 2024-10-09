@@ -34,7 +34,7 @@ const CreatePlaylist = () => {
         onClick={handleCreatePlaylist}
       >
         <MdOutlinePlaylistAdd className="text-neutral-300" size={30} />
-        <p className="text-neutral-300 font-semibold">Создать плейлисть</p>
+        <p className="text-neutral-300 font-semibold max-md:hidden">Создать плейлисть</p>
       </button>
     </div>
   );

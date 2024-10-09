@@ -40,7 +40,7 @@ const SearchTracks = () => {
           router.push("/search");
           setHasFocus(true);
         }}
-        className="w-full bg-neutral-800 min-h-[45px] rounded-full focus:outline-none px-4 placeholder:text-neutral-400  placeholder:font-semibold max-[800px]:hidden"
+        className="w-full bg-neutral-800 min-h-[45px] rounded-full focus:outline-none px-4 placeholder:text-neutral-400  placeholder:font-semibold"
       />
     </div>
   );
