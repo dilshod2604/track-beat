@@ -7,6 +7,7 @@ const api = index.injectEndpoints({
       SEARCH.SearchTracksResponse,
       SEARCH.SearchTracksRequest
     >({
+      
       query: (query) => ({
         url: "/search",
         method: "GET",
